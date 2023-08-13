@@ -5,17 +5,18 @@ const fs = require("fs");
 
 /* CREATE JWT token first time*/
 router.post('/signdetails', function(req, res, next) {
-  console.log(req.ip);
+
   fs.readFile("./customer.json", "utf8", (err, jsonString) => {
     if (err) {
       console.log("File read failed:", err);
       return;
     }
     const customer = JSON.parse(jsonString);
+    //check if client exists or not..
     var users = customer.users;
     if(users.includes(req.body.username)){
       var token = jwt.sign({ username : req.body.username }, 'mySecretKey',{ expiresIn: '30s' });
-      res.send({
+      res.json({
         token: token
       });
     }else{
