@@ -1,13 +1,28 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
+const fs = require("fs");
 
 /* CREATE JWT token first time*/
 router.post('/signdetails', function(req, res, next) {
-  var token = jwt.sign({ username : req.body.username }, 'mySecretKey',{ expiresIn: '30s' });
-  res.send({
-    token: token
+  console.log(req.ip);
+  fs.readFile("./customer.json", "utf8", (err, jsonString) => {
+    if (err) {
+      console.log("File read failed:", err);
+      return;
+    }
+    const customer = JSON.parse(jsonString);
+    var users = customer.users;
+    if(users.includes(req.body.username)){
+      var token = jwt.sign({ username : req.body.username }, 'mySecretKey',{ expiresIn: '30s' });
+      res.send({
+        token: token
+      });
+    }else{
+      res.status(404).send("Incorrect Credentials");
+    }
   });
+
 });
 
 /* check the jwt token for username*/
@@ -20,10 +35,10 @@ router.post('/checkjwt', function(req, res, next) {
  
   if(decodedtoken && decodedtoken.username == "viragjain503"){
     res.status(200).json({
-      message : "correct token buddy"
+      message : "Correct token buddy"
     });
   }else{
-    res.status(400).send("Wrong token buddy");
+    res.status(400).send("Wrong token details buddy");
   }
 });
 
