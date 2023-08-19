@@ -5,7 +5,7 @@ const fs = require("fs");
 
 /* Writing client */
 router.post('/submitclient', function(req, res, next) {
-  fs.readFile("./clients.json", "utf8", (err, jsonString) => {
+  fs.readFile("./db/clients.json", "utf8", (err, jsonString) => {
     if (err) {
       console.log("File read failed:", err);
       return;

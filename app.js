@@ -8,6 +8,9 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var jwttokenRouter = require('./routes/jwttoken');
 var clientsRouter = require('./routes/clients');
+var authRouter = require('./routes/auth');
+var verifyotpRouter = require('./routes/verifyotp');
+
 
 var app = express();
 
@@ -25,6 +28,8 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/jwttoken', jwttokenRouter);
 app.use('/clients', clientsRouter);
+app.use('/auth', authRouter);
+app.use('/verifyotp', verifyotpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

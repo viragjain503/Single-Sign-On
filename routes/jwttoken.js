@@ -6,7 +6,7 @@ const fs = require("fs");
 /* CREATE JWT token first time*/
 router.post('/signdetails', function(req, res, next) {
 
-  fs.readFile("./customer.json", "utf8", (err, jsonString) => {
+  fs.readFile("./db/customer.json", "utf8", (err, jsonString) => {
     if (err) {
       console.log("File read failed:", err);
       return;
