@@ -22,7 +22,7 @@ router.post('/submitclient', function(req, res, next) {
     const updatedClientFile = JSON.stringify(clientFile);
 
     // Write the updated JSON data back to the file
-    fs.writeFile('./clients.json', updatedClientFile, 'utf8', (writeErr) => {
+    fs.writeFile('./db/clients.json', updatedClientFile, 'utf8', (writeErr) => {
         if (writeErr) {
             console.error('Error writing to file:', writeErr);
             return;
@@ -37,7 +37,7 @@ router.post('/submitclient', function(req, res, next) {
 });
 
 router.get('/getClient', function(req, res, next) {
-    fs.readFile("./clients.json", "utf8", (err, jsonString) => {
+    fs.readFile("./db/clients.json", "utf8", (err, jsonString) => {
       if (err) {
         console.log("File read failed:", err);
         return;

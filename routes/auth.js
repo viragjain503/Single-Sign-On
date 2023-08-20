@@ -29,8 +29,10 @@ router.post('/signup', function(req, res, next) {
             console.error('Error writing to file:', writeErr);
             return;
         }
-        res.json({
-            status : "SUCCESS"
+        var token = jwt.sign({ username : req.body.username, password: req.body.password}, 'mySecretKey',{ expiresIn: '20m' });
+        res.json({           
+            status : "SUCCESS",
+            token: token
         });
     });
 
@@ -73,25 +75,27 @@ router.get('/checkEmail', function(req, res, next) {
 router.post('/login', function(req, res, next) {
     // console.log(req.body.identifier);
     // console.log(req.body.password);
-    
-fs.readFile("./db/users.json", "utf8", (err, jsonString) => {
-    if (err) {
-    console.log("File read failed for users:", err);
-    return;
-    }
-    const usersFile = JSON.parse(jsonString);
-    let users = usersFile.users;
+    fs.readFile("./db/users.json", "utf8", (err, jsonString) => {
+        if (err) {
+        console.log("File read failed for users:", err);
+        return;
+        }
+        const usersFile = JSON.parse(jsonString);
+        let users = usersFile.users;
 
-    const validCredentials = users.some(user => (
-        (user.email.toLowerCase() === req.body.identifier.toLowerCase() || user.username.toLowerCase() === req.body.identifier.toLowerCase())
-            &&  
-        (user.password === req.body.password)
-    ));
-
-    res.json({
-        isValid: validCredentials
-    })
-});
+        const validCredentials = users.some(user => (
+            (user.email.toLowerCase() === req.body.identifier.toLowerCase() || user.username.toLowerCase() === req.body.identifier.toLowerCase())
+                &&  
+            (user.password === req.body.password)
+        ));
+        
+        var token = jwt.sign({ username : req.body.username, password: req.body.password}, 'mySecretKey',{ expiresIn: '20m' });
+        
+        res.json({
+            isValid: validCredentials,
+            token: token
+        })
+    });
 });
 
 module.exports = router;
