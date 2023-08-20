@@ -84,12 +84,12 @@ router.post('/login', function(req, res, next) {
         let users = usersFile.users;
 
         const validCredentials = users.some(user => (
-            (user.email.toLowerCase() === req.body.identifier.toLowerCase() || user.username.toLowerCase() === req.body.identifier.toLowerCase())
+            (user.email.toLowerCase() === req.body.identifier.toLowerCase() )
                 &&  
             (user.password === req.body.password)
         ));
         
-        var token = jwt.sign({ username : req.body.username, password: req.body.password}, 'mySecretKey',{ expiresIn: '20m' });
+        var token = jwt.sign({ identifier : req.body.identifier, password: req.body.password}, 'mySecretKey',{ expiresIn: '30m' });
         
         res.json({
             isValid: validCredentials,

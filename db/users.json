@@ -1,9 +1,1 @@
-{
-  "users": [
-    {
-      "username": "viragjain503",
-      "email": "VIRAGJAIN.WORK@GMAIL.COM",
-      "password": "Dop@12345"
-    }
-  ]
-}
+{"users":[{"username":"viragjain503","email":"VIRAGJAIN.WORK@GMAIL.COM","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"}]}

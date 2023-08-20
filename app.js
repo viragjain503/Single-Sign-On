@@ -11,6 +11,7 @@ var clientsRouter = require('./routes/clients');
 var authRouter = require('./routes/auth');
 var verifyotpRouter = require('./routes/verifyotp');
 
+const checkHeadersMiddleware = require('./middleware/headerMiddleware'); // Import your middleware
 
 var app = express();
 
@@ -25,11 +26,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+
+
 app.use('/', indexRouter);
-app.use('/jwttoken', jwttokenRouter);
-app.use('/clients', clientsRouter);
 app.use('/auth', authRouter);
 app.use('/verifyotp', verifyotpRouter);
+app.use('/jwttoken', jwttokenRouter);
+app.use(checkHeadersMiddleware);
+app.use('/clients', clientsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

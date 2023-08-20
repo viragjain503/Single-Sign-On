@@ -1,1 +1,30 @@
-{"clients":[{"clientId":"qml9oyt4@ClientId","clientSecret":"Secret1234@"}]}
+{
+  "clients": [
+    {
+      "clientId": "avpxu95g@ClientId",
+      "clientSecret": "Secret1234@",
+      "expiresIn": "30m",
+      "permissions": ["Phone", "Email"],
+      "redirectPage": "www.google.com",
+      "email": "viragjain.work@gmail.com",
+      "username": "viragjain503"
+    },
+    {
+      "clientId": "qta45x92@ClientId",
+      "clientSecret": "abcdfgh123$",
+      "expiresIn": "60m",
+      "permissions": ["Email", "Username"],
+      "redirectPage": "www.instagram.com",
+      "email": "viragjain.work@gmail.com",
+      "username": "viragjain503"
+    },
+    {
+      "clientId": "bmgbf25o@ClientId",
+      "clientSecret": "viragSecret@",
+      "expiresIn": "60m",
+      "permissions": ["Phone", "Email", "Username"],
+      "redirectPage": "facebook.com",
+      "email": "viragjain503@gmail.com"
+    }
+  ]
+}
