@@ -5,25 +5,23 @@
       "clientSecret": "Secret1234@",
       "expiresIn": "30m",
       "permissions": ["Phone", "Email"],
-      "redirectPage": "www.google.com",
-      "email": "viragjain.work@gmail.com",
-      "username": "viragjain503"
+      "redirectPage": "https://www.google.com/",
+      "email": "viragjain.work@gmail.com"
     },
     {
       "clientId": "qta45x92@ClientId",
       "clientSecret": "abcdfgh123$",
       "expiresIn": "60m",
       "permissions": ["Email", "Username"],
-      "redirectPage": "www.instagram.com",
-      "email": "viragjain.work@gmail.com",
-      "username": "viragjain503"
+      "redirectPage": "https://www.google.com/",
+      "email": "viragjain.work@gmail.com"
     },
     {
       "clientId": "bmgbf25o@ClientId",
       "clientSecret": "viragSecret@",
       "expiresIn": "60m",
       "permissions": ["Phone", "Email", "Username"],
-      "redirectPage": "facebook.com",
+      "redirectPage": "https://www.google.com/",
       "email": "viragjain503@gmail.com"
     }
   ]
