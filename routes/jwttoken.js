@@ -52,7 +52,7 @@ router.post('/signdetails', async (req, res, next) => {
       const token = jwt.sign({ jwtObject: jwtObject }, utilsObject.clientSecret, {
         expiresIn: '15m',
       });
-
+      
       res.json({
         token: token,
         redirectPage: utilsObject.redirectPage,

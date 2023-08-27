@@ -9,20 +9,20 @@
       "email": "viragjain.work@gmail.com"
     },
     {
-      "clientId": "qta45x92@ClientId",
-      "clientSecret": "abcdfgh123$",
-      "expiresIn": "60m",
-      "permissions": ["Email", "Username"],
-      "redirectPage": "https://www.google.com/",
-      "email": "viragjain.work@gmail.com"
-    },
-    {
       "clientId": "bmgbf25o@ClientId",
       "clientSecret": "viragSecret@",
       "expiresIn": "60m",
       "permissions": ["Phone", "Email", "Username"],
       "redirectPage": "https://www.google.com/",
       "email": "viragjain503@gmail.com"
-    }
+    },
+    {
+        "clientId": "demoClient",
+        "clientSecret": "demoSecret",
+        "expiresIn": "60m",
+        "permissions": ["Phone", "Email", "Username"],
+        "redirectPage": "https://www.google.com/",
+        "email": "viragjain503@gmail.com"
+      }
   ]
 }

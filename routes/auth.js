@@ -29,7 +29,7 @@ router.post('/signup', function(req, res, next) {
             console.error('Error writing to file:', writeErr);
             return;
         }
-        var token = jwt.sign({ username : req.body.username, password: req.body.password}, 'mySecretKey',{ expiresIn: '20m' });
+        var token = jwt.sign({ email : req.body.email, password: req.body.password}, 'mySecretKey',{ expiresIn: '20m' });
         res.json({           
             status : "SUCCESS",
             token: token
@@ -84,12 +84,12 @@ router.post('/login', function(req, res, next) {
         let users = usersFile.users;
 
         const validCredentials = users.some(user => (
-            (user.email.toLowerCase() === req.body.identifier.toLowerCase() )
+            (user.email.toLowerCase() === req.body.email.toLowerCase() )
                 &&  
             (user.password === req.body.password)
         ));
         
-        var token = jwt.sign({ identifier : req.body.identifier, password: req.body.password}, 'mySecretKey',{ expiresIn: '30m' });
+        var token = jwt.sign({ email : req.body.email, password: req.body.password}, 'mySecretKey',{ expiresIn: '30m' });
         
         res.json({
             isValid: validCredentials,

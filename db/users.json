@@ -1,1 +1,24 @@
-{"users":[{"username":"viragjain503","email":"VIRAGJAIN.WORK@GMAIL.COM","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"},{"username":"viragjain.work","email":"viragjain503@gmail.com","password":"Dop@12345"},{"username":"","email":"","password":""}]}
+{
+  "users": [
+    {
+      "username": "viragjain503",
+      "email": "VIRAGJAIN.WORK@GMAIL.COM",
+      "password": "Temp@12345"
+    },
+    {
+      "username": "viragjain.work",
+      "email": "viragjain503@gmail.com",
+      "password": "Temp@12345"
+    },
+    {
+      "username": "xepot",
+      "email": "xepot75282@synclane.com",
+      "password": "Temp@12345"
+    },
+    {
+      "username": "yitname",
+      "email": "yitame2492@synclane.com",
+      "password": "Temp@12345"
+    }
+  ]
+}

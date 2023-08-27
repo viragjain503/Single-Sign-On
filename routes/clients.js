@@ -50,7 +50,10 @@ router.get('/getClient', function(req, res, next) {
 
       const clientFile = JSON.parse(jsonString);
       let clients = clientFile.clients;
-      const filteredClients = clients.filter(client => client.email === req.identifier || client.username === req.identifier);
+      
+      console.log(req.email);
+
+      const filteredClients = clients.filter(client => client.email === req.email);
 
       res.json(filteredClients);
     });
@@ -89,7 +92,4 @@ router.delete('/deleteClient', function(req, res, next) {
 
 });
 
-function deleteClient(clientsArray, clientIdToDelete) {
-  return 
-}
 module.exports = router;

@@ -10,8 +10,8 @@ const checkHeadersMiddleware = (req, res, next) => {
         if(decodedtoken == null){
             return res.status(400).json({ error: `Wrong session` });
         }
-
-        req.identifier = decodedtoken.identifier;
+        console.log(decodedtoken.email);
+        req.email = decodedtoken.email;
     }else{
         return res.status(400).json({ error: `Missing required headers` });
     }
